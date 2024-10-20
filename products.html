@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Available Plants</h1>
+        <div class="product">
+            <img src="plant1.jpg" alt="Fiddle Leaf Fig" />
+            <p>Name: Fiddle Leaf Fig</p>
+            <p>Price: $20</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </main>
+    <script>
+        let cartCount = 0;
+        function addToCart(button) {
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+            button.disabled = true;
+        }
+    </script>
+</body>
+</html>
